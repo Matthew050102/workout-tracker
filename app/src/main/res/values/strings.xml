@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">WorkoutTracker</string>
+    <string name="login">Bejelentkezés</string>
+    <string name="email">Email</string>
+    <string name="password">Jelszó</string>
+    <string name="registration">Regisztráció</string>
+    <string name="confirm_password">Jelszó újra</string>
+    <string name="already_have_account_login">Már van fiókom - Bejelentkezés</string>
+    <string name="welcome">Üdvözlünk!</string>
+    <string name="logout">Kijelentkezés</string>
+    <string name="workout_name">Edzés neve</string>
+    <string name="time_spent_in_minutes">Időtartam (perc)</string>
+    <string name="save">Mentés</string>
+    <string name="my_workouts">Edzéseim</string>
+    <string name="add_new_workout">Új Edzés Hozzáadása</string>
+    <string name="thirty_mins">30 perc</string>
+    <string name="show_my_workouts">Edzéseim megtekintése</string>
+    <string name="my_profile">Profilom</string>
+    <string name="workouts">Edzések</string>
+    <string name="duration">Időtartam</string>
+    <string name="reps_number">Ismétlés (pl. 3x12)</string>
+    <string name="doesnt_have_account_register">Még nincs fiókom - Regisztráció</string>
+</resources>

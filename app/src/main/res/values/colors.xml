@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="bgColor">#2A3235</color>
+    <color name="buttonColor">#1D8CE6</color>
+    <color name="recyclerColor">#2E373A</color>
+    <color name="itemColor">#4F5D62</color>
+    <color name="bottomNavColor">#171C1D</color>
+    <color name="bottomNavItemBg">#252f30</color>
+    <color name="checkBoxBg">#445054</color>
+    <color name="checkBoxChecked">#47a642</color>
+</resources>
