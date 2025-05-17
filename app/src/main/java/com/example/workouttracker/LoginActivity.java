@@ -18,7 +18,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText editTextEmail, editTextPassword;
     private Button buttonLogin, buttonGoToRegister;
 
-    private FirebaseAuth mAuth; // FirebaseAuth példány
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +43,6 @@ public class LoginActivity extends AppCompatActivity {
                     return;
                 }
 
-                // Firebase Authentication login
                 mAuth.signInWithEmailAndPassword(email, password)
                         .addOnCompleteListener(task -> {
                             if (task.isSuccessful()) {

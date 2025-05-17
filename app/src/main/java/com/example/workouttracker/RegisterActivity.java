@@ -58,7 +58,6 @@ public class RegisterActivity extends AppCompatActivity {
                     return;
                 }
 
-                // Firebase Authentication regisztráció
                 mAuth.createUserWithEmailAndPassword(email, password)
                         .addOnCompleteListener(task -> {
                             if (task.isSuccessful()) {

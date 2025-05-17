@@ -13,52 +13,40 @@ import com.google.firebase.auth.FirebaseUser;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class ProfileActivity extends AppCompatActivity {
-
-    private TextView textViewUserEmail;
-    private Button buttonLogout;
-    private View profileLayout;
-    private Animation fadeIn;
-
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    protected void onCreate(Bundle b) {
+        super.onCreate(b);
         setContentView(R.layout.activity_profile);
 
-        profileLayout=findViewById(R.id.profileLayout);
-        fadeIn = AnimationUtils.loadAnimation(this, R.anim.fade_in);
-        profileLayout.startAnimation(fadeIn);
-
-        textViewUserEmail = findViewById(R.id.textViewUserEmail);
-        buttonLogout = findViewById(R.id.buttonLogout);
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
-
-        bottomNavigationView.setSelectedItemId(R.id.nav_profile);
-
+        TextView emailTv = findViewById(R.id.textViewUserEmail);
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if (user != null) {
-            textViewUserEmail.setText(user.getEmail());
+            emailTv.setText(user.getEmail());
+        } else {
+            emailTv.setText("Nincs bejelentkezve");
         }
 
-        buttonLogout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FirebaseAuth.getInstance().signOut();
-                Intent intent = new Intent(ProfileActivity.this, LoginActivity.class);
-                startActivity(intent);
-                finish();
-            }
-        });
-
-        bottomNavigationView.setOnItemSelectedListener(item -> {
+        BottomNavigationView nav = findViewById(R.id.bottomNavigationView);
+        nav.setSelectedItemId(R.id.nav_profile);
+        nav.setOnItemSelectedListener(item -> {
             int itemId = item.getItemId();
-            if (itemId == R.id.nav_workouts) {
-                startActivity(new Intent(ProfileActivity.this, MainActivity.class));
-                finish();
+            if (itemId == R.id.nav_profile) {
                 return true;
-            } else if (itemId == R.id.nav_profile) {
+            } else if (itemId == R.id.nav_workouts) {
+                startActivity(new Intent(this, MainActivity.class));
+                finish();
                 return true;
             }
             return false;
         });
+
+
+
+        findViewById(R.id.buttonLogout).setOnClickListener(v -> {
+            FirebaseAuth.getInstance().signOut();
+            startActivity(new Intent(this, LoginActivity.class));
+            finish();
+        });
     }
+
 }

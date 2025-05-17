@@ -42,4 +42,15 @@
         android:backgroundTintMode="add"
         app:cornerRadius="0dp"/>
 
+    <Button
+        android:id="@+id/buttonGetLocation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/get_location"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/buttonColor"
+        android:backgroundTintMode="add"
+        android:textColor="@color/white"
+        app:cornerRadius="0dp"/>
+
 </LinearLayout>
